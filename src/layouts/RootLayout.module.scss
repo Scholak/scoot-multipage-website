@@ -1,0 +1,11 @@
+@import '../breakpoints';
+
+.main {
+  margin-top: 64px;
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  .main {
+    margin-top: 0;
+  }
+}

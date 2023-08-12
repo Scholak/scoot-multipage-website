@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+@import './breakpoints';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Space Mono', monospace;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+section {
+  padding: 16px;
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  section {
+    padding: 64px 32px;
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  section {
+    padding: 64px 128px;
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  section {
+    padding: 64px 256px;
+  }
+}

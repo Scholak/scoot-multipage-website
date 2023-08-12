@@ -1,0 +1,13 @@
+@import '../../../../breakpoints';
+
+.listedSection {
+  display: grid;
+  place-items: center;
+  gap: 32px;
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .listedSection {
+    grid-template-columns: 2fr 3fr 1fr;
+  }
+}

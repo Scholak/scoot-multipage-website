@@ -1,0 +1,6 @@
+export { default as Feature } from './Feature/Feature'
+export { default as Title } from './Title/Title'
+export { default as SubTitle } from './SubTitle/SubTitle'
+export { default as Paragraph } from './Paragraph/Paragraph'
+export { default as Button } from './Button/Button'
+export { default as PageTitle } from './PageTitle/PageTitle'

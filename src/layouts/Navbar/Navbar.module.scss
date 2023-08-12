@@ -1,0 +1,170 @@
+@import '../../_colors';
+@import '../../breakpoints';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $color-white;
+  z-index: 2;
+
+  .logo {
+    font-size: 32px;
+    letter-spacing: 2px;
+    
+    a {
+      color: $color-dark-navy
+    }
+  }
+
+  .links {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 256px;
+    height: calc(100% - 64px);
+    padding: 32px;
+    padding-top: 64px;
+    background: $color-dark-gray;
+    transform: translateX(-100%);
+    transition: all .2s ease-in-out;
+
+    &.active {
+      transform: translateX(0);
+    }
+
+    .navLinks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      font-size: 18px;
+      font-weight: bold;
+
+      a {
+        color: $color-white;
+      }
+    }
+  }
+
+  .burger {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    height: 20px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    span {
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background: $color-yellow;
+      transition: all .2s ease-in;
+      z-index: 10;
+    }
+
+    &.active {
+      span:first-child {
+        transform: rotate(45deg) translateY(11px);
+      }
+
+      span:nth-child(2) {
+        height: 0;
+      }
+
+      span:last-child {
+        transform: rotate(-45deg) translateY(-11px);
+      }
+    }
+  }
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: rgba($color-black, .7);
+    transform: translateX(-100%);
+    transition: transform .2s;
+
+    &.active {
+      background: rgba($color-black, .7);
+      transform: translateX(0);
+    }
+  }
+
+@media screen and (min-width: $breakpoint-sm) {
+  .navbar {
+    position: static;
+    gap: 10px;
+    width: 100%;
+    padding: 0 32px;
+
+    .links {
+      position: static;
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      padding: 0;
+      transform: translateX(0);
+      height: auto;
+      background: $color-white;
+
+      .navLinks {
+        flex-direction: row;
+        color: $color-dim-gray;
+
+        li {
+
+          a {
+            color: $color-dim-gray;
+            transition: all .2s;
+
+            &:hover {
+              color: $color-yellow;
+            }
+          }
+        }
+      }
+
+      .cta {
+        padding: 12px 24px;
+      }
+    }
+
+    .burger, .overlay {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .navbar {
+    padding: 0 64px;
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+  .navbar {
+    padding: 0 128px;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: $breakpoint-xl) {
+  .navbar {
+    padding: 0 256px;
+  }
+}

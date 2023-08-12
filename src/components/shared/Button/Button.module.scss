@@ -1,0 +1,32 @@
+@import '../../../colors';
+@import '../../../breakpoints';
+
+.cta {
+  all: unset;
+
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 16px 32px;
+  width: min-content;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  background: $color-yellow;
+  color: $color-white;
+
+  transition: all .2s;
+  border: 3px solid transparent;
+
+  &:hover {
+    border: 3px solid $color-yellow;
+    background: $color-white;
+    color: $color-yellow;
+  }
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  .cta {
+    padding: 12px 24px;
+  }
+}

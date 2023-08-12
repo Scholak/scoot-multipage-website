@@ -1,0 +1,17 @@
+@import '../../../colors';
+@import '../../../breakpoints';
+
+.paragraph {
+  font-family: 'Lexend Deca', sans-serif;
+  color: $color-dim-gray;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2;
+  text-align: center;
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .paragraph {
+    text-align: left;
+  }
+}

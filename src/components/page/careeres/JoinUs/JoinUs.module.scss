@@ -1,0 +1,30 @@
+@import '../../../../breakpoints';
+
+.joinUs {
+  display: grid;
+  gap: 20px;
+  place-items: center;
+
+  .content {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+  .joinUs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+
+    img {
+      margin-right: auto;
+    }
+
+    .content {
+      align-items: flex-start;
+    }
+  }
+}
